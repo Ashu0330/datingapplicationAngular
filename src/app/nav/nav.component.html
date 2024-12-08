@@ -6,6 +6,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
+            /
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -20,11 +21,11 @@
                             class="bi bi-slash-circle"></i> Disabled</a>
                 </li>
             </ul>
-            <form class="d-flex align-items-center" role="search">
+            <form [formGroup]="form" class="d-flex align-items-center" role="search">
                 <input type="text" name="username" class="form-control me-2" placeholder="Username"
-                    aria-label="Username" [(ngModel)]="username">
+                    aria-label="Username" formControlName="username">
                 <input type="password" name="password" class="form-control me-2" placeholder="Password"
-                    aria-label="Password" [(ngModel)]="password">
+                    aria-label="Password" formControlName="password">
                 <button class="btn btn-outline-light" type="submit" (click)="login()"><i
                         class="bi bi-box-arrow-right"></i> Login</button>
             </form>

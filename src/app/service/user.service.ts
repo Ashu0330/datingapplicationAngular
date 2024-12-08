@@ -14,8 +14,8 @@ export class UserService {
     return this.http.get<ApiResponse<usermodel>>("https://localhost:7138/api/User/GetUsers")
 
   }
-  loginmethod(username: string, password: string) {
-    return this.http.get<ApiResponse<boolean>>(`https://localhost:7138/api/User/Login?username=${username}&password=${password}`);
+  loginmethod(model:any) {
+    return this.http.post<ApiResponse<usermodel>>(`https://localhost:7138/api/User/Login`,model);
   }
 
 
